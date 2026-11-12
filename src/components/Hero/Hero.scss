@@ -1,0 +1,125 @@
+.hero {
+min-height: 85vh;
+background: #0b0b0b;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+padding: 70px 8%;
+position: relative;
+overflow: hidden;
+gap: 40px;
+
+&__content {
+    flex: 1;
+    z-index: 2;
+}
+
+&__label {
+    color: #e32636;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.05;
+    font-weight: 900;
+    color: #fff;
+
+    span {
+        color: #e32636;
+    }
+}
+
+&__slogan {
+    color: #e32636;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+&__description {
+    color: #bdbdbd;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 35px;
+}
+
+&__button {
+    display: inline-block;
+    background: #e32636;
+    color: white;
+    padding: 18px 28px;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 5px;
+    transition: 0.3s;
+
+    &:hover {
+        background: white;
+        color: #e32636;
+        transform: translateY(-3px);
+    }
+}
+
+ &__image {
+    flex: 1;
+    max-width: 520px;
+    height: 600px;
+    position: relative;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 8px; 
+    }
+
+ &::after {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border: 8px solid transparent;
+    border-top-color:#e32636;
+    border-left-color: #e32636;
+    border-right-color: white;
+    border-bottom-color: white;
+    border-radius: 12px;
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+&__number {
+    position: absolute;
+    bottom: 20px;
+    left: 8%;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 3px;
+   }
+}
+
+@media (max-width: 800px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 6%;
+
+    &__image {
+        width: 100%;
+        max-width: 420px;
+        height: 480px;
+    }
+
+    &__description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+   }
+}

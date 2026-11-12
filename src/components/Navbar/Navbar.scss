@@ -1,0 +1,133 @@
+.navbar {
+width: 100%;
+background:#101010;
+border-bottom: 1px solid #292929;
+position: relative;
+z-index: 100;
+
+&__container {
+    max-width: 1400px;
+    min-height: 90px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+&__logo {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    span {
+        color: #e53935;
+    }
+
+    small {
+        color: #999;
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-top: 3px;
+    }
+}
+
+&_toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+        display: block;
+        width: 27px;
+        height: 3px;
+        background: #e53935;
+        border-radius: 3px;
+    }
+}
+
+&__menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight:600;
+        transition: color 0.3s;
+
+        &:hover
+        &.active {
+            color:#e53935;
+         }
+        }
+    }
+    &__button {
+        background: #e53935;
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 22px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        transition: background 0.3, transform 0.3s;
+
+       &:hover {
+        background: #bd2525;
+        transform: translateY(-2px);
+       }
+   }
+}
+
+@media (max-width: 650px) {
+    .navbar__container {
+        min-height: 75px;
+        padding: 0 20px;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .navbar__logo {
+        font-size: 22px;
+    }
+
+    .navbar__toggle {
+        display: flex;
+    }
+
+    .navbar__menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        padding: 25px 20px;
+        background: #101010;
+        border-top: 1px solid #292929;
+    }
+
+    .navbar__menu--open {
+        display: flex;
+    }
+
+    .navbar__button {
+        display: none;
+    }
+}
+
